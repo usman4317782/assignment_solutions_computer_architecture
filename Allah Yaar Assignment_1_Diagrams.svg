@@ -1,0 +1,105 @@
+<svg viewBox="0 0 1000 1700" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif">
+  <rect width="1000" height="1700" fill="#0f172a"/>
+  <text x="500" y="50" text-anchor="middle" fill="#facc15" font-size="30" font-weight="bold">ASSIGNMENT 1 — Advanced Computer Architecture</text>
+  <text x="500" y="80" text-anchor="middle" fill="#94a3b8" font-size="16">Diagrams Q1, Q2 &amp; Q5</text>
+
+  <!-- Q1 -->
+  <text x="40" y="130" fill="#38bdf8" font-size="22" font-weight="bold">Q1 — Automatic Parallelization</text>
+
+  <rect x="60" y="150" width="880" height="60" rx="10" fill="#1e293b" stroke="#475569"/>
+  <text x="500" y="175" text-anchor="middle" fill="#e2e8f0" font-size="16">Sequential Program</text>
+  <text x="500" y="198" text-anchor="middle" fill="#cbd5e1" font-size="14">Task A → Task B → Task C → Task D (one after another)</text>
+
+  <line x1="500" y1="210" x2="500" y2="250" stroke="#fbbf24" stroke-width="3" marker-end="url(#arrow)"/>
+  <text x="520" y="235" fill="#fbbf24" font-size="14">Automatic Parallelizer (Compiler / Runtime)</text>
+
+  <g font-size="14">
+    <rect x="60" y="260" width="880" height="160" rx="10" fill="#0b1220" stroke="#22c55e"/>
+    <text x="500" y="285" text-anchor="middle" fill="#22c55e" font-size="16" font-weight="bold">Parallelized Execution (4 Cores)</text>
+    <rect x="100" y="300" width="780" height="30" rx="6" fill="#14532d"/>
+    <text x="120" y="320" fill="#bbf7d0">Core 1: Task A ───────────────►</text>
+    <rect x="100" y="335" width="780" height="30" rx="6" fill="#14532d"/>
+    <text x="120" y="355" fill="#bbf7d0">Core 2: Task B ───────────────►</text>
+    <rect x="100" y="370" width="780" height="30" rx="6" fill="#14532d"/>
+    <text x="120" y="390" fill="#bbf7d0">Core 3: Task C ───────────────►</text>
+    <rect x="100" y="405" width="780" height="30" rx="6" fill="#14532d" opacity="0"/>
+  </g>
+  <text x="500" y="440" text-anchor="middle" fill="#facc15" font-size="16" font-weight="bold">⚡ Result: ~4x Faster Execution (Speedup via Amdahl's Law)</text>
+
+  <!-- Q2 -->
+  <text x="40" y="510" fill="#38bdf8" font-size="22" font-weight="bold">Q2 — Multicore Processor Architecture</text>
+
+  <rect x="60" y="530" width="880" height="220" rx="12" fill="#1e293b" stroke="#475569"/>
+  <text x="500" y="558" text-anchor="middle" fill="#e2e8f0" font-size="16" font-weight="bold">Multicore Processor Chip</text>
+
+  <g font-size="13" text-anchor="middle">
+    <rect x="100" y="575" width="180" height="130" rx="8" fill="#0b1220" stroke="#38bdf8"/>
+    <text x="190" y="600" fill="#38bdf8" font-weight="bold">Core 1</text>
+    <text x="190" y="625" fill="#cbd5e1">ALU + FPU</text>
+    <text x="190" y="650" fill="#cbd5e1">L1 / L2 Cache</text>
+
+    <rect x="300" y="575" width="180" height="130" rx="8" fill="#0b1220" stroke="#38bdf8"/>
+    <text x="390" y="600" fill="#38bdf8" font-weight="bold">Core 2</text>
+    <text x="390" y="625" fill="#cbd5e1">ALU + FPU</text>
+    <text x="390" y="650" fill="#cbd5e1">L1 / L2 Cache</text>
+
+    <rect x="500" y="575" width="180" height="130" rx="8" fill="#0b1220" stroke="#38bdf8"/>
+    <text x="590" y="600" fill="#38bdf8" font-weight="bold">Core 3</text>
+    <text x="590" y="625" fill="#cbd5e1">ALU + FPU</text>
+    <text x="590" y="650" fill="#cbd5e1">L1 / L2 Cache</text>
+
+    <rect x="700" y="575" width="180" height="130" rx="8" fill="#0b1220" stroke="#38bdf8"/>
+    <text x="790" y="600" fill="#38bdf8" font-weight="bold">Core 4</text>
+    <text x="790" y="625" fill="#cbd5e1">ALU + FPU</text>
+    <text x="790" y="650" fill="#cbd5e1">L1 / L2 Cache</text>
+  </g>
+
+  <rect x="100" y="715" width="780" height="25" rx="6" fill="#312e81"/>
+  <text x="500" y="733" text-anchor="middle" fill="#c7d2fe" font-size="14">Shared L3 Cache &amp; Memory Bus</text>
+
+  <line x1="500" y1="750" x2="500" y2="780" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="350" y="780" width="300" height="35" rx="6" fill="#1e293b" stroke="#94a3b8"/>
+  <text x="500" y="803" text-anchor="middle" fill="#e2e8f0" font-size="14">Main Memory (RAM)</text>
+
+  <text x="500" y="850" text-anchor="middle" fill="#facc15" font-size="16" font-weight="bold">
+    Result: 4 tasks run simultaneously → total time ≈ max(t1..t4) instead of sum
+  </text>
+
+  <!-- Q5 -->
+  <text x="40" y="920" fill="#38bdf8" font-size="22" font-weight="bold">Q5 — ISA vs Microarchitecture (Binary Compatibility)</text>
+
+  <rect x="200" y="950" width="600" height="50" rx="8" fill="#1e293b" stroke="#475569"/>
+  <text x="500" y="980" text-anchor="middle" fill="#e2e8f0" font-size="15">Software Layer (Application binary, e.g. compiled .exe)</text>
+
+  <line x1="500" y1="1000" x2="500" y2="1030" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <rect x="150" y="1030" width="700" height="60" rx="8" fill="#0b1220" stroke="#22c55e"/>
+  <text x="500" y="1055" text-anchor="middle" fill="#22c55e" font-size="16" font-weight="bold">ISA Layer (x86-64 / ARMv8 / RISC-V)</text>
+  <text x="500" y="1078" text-anchor="middle" fill="#cbd5e1" font-size="13">Specification: instructions, registers, memory model</text>
+
+  <line x1="350" y1="1090" x2="250" y2="1130" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="650" y1="1090" x2="750" y2="1130" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <rect x="100" y="1130" width="320" height="80" rx="8" fill="#1e293b" stroke="#f87171"/>
+  <text x="260" y="1158" text-anchor="middle" fill="#f87171" font-size="14" font-weight="bold">Intel Raptor Lake μArch</text>
+  <text x="260" y="1180" text-anchor="middle" fill="#cbd5e1" font-size="12">(e.g. Core i9-13900K)</text>
+
+  <rect x="580" y="1130" width="320" height="80" rx="8" fill="#1e293b" stroke="#f87171"/>
+  <text x="740" y="1158" text-anchor="middle" fill="#f87171" font-size="14" font-weight="bold">AMD Zen 4 μArch</text>
+  <text x="740" y="1180" text-anchor="middle" fill="#cbd5e1" font-size="12">(e.g. Ryzen 9 7950X)</text>
+
+  <text x="500" y="1250" text-anchor="middle" fill="#facc15" font-size="16" font-weight="bold">
+    Both run the SAME x86-64 binary → Binary Compatibility
+  </text>
+  <text x="500" y="1280" text-anchor="middle" fill="#94a3b8" font-size="13">
+    ISA = WHAT (specification) | Microarchitecture = HOW (implementation in silicon)
+  </text>
+
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#94a3b8"/>
+    </marker>
+  </defs>
+
+  <text x="500" y="1660" text-anchor="middle" fill="#64748b" font-size="13">Assignment 1 — Advanced Computer Architecture | Solution Set A</text>
+</svg>

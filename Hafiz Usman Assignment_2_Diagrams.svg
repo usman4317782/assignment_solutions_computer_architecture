@@ -1,0 +1,109 @@
+<svg viewBox="0 0 1000 1700" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif">
+  <rect width="1000" height="1700" fill="#1a1a2e"/>
+  <text x="500" y="50" text-anchor="middle" fill="#fcd34d" font-size="30" font-weight="bold">ASSIGNMENT 2 — Advanced Computer Architecture</text>
+  <text x="500" y="80" text-anchor="middle" fill="#94a3b8" font-size="16">Diagrams Q1, Q2 &amp; Q5</text>
+
+  <!-- Q1 -->
+  <text x="40" y="130" fill="#34d399" font-size="22" font-weight="bold">Q1 — Why Automatic Parallelization is Needed</text>
+
+  <rect x="80" y="150" width="840" height="60" rx="10" fill="#16213e" stroke="#475569"/>
+  <text x="500" y="175" text-anchor="middle" fill="#e2e8f0" font-size="16">Sequential Code (Legacy)</text>
+  <text x="500" y="198" text-anchor="middle" fill="#cbd5e1" font-size="13">Step 1 → Step 2 → Step 3 → Step 4 → Done   (Time = T1+T2+T3+T4)</text>
+
+  <line x1="500" y1="210" x2="500" y2="250" stroke="#fbbf24" stroke-width="3" marker-end="url(#arrow2)"/>
+  <text x="520" y="235" fill="#fbbf24" font-size="14">Automatic Parallelizer — Compiler detects independence</text>
+
+  <rect x="80" y="260" width="840" height="170" rx="10" fill="#0d1b2a" stroke="#34d399"/>
+  <text x="500" y="285" text-anchor="middle" fill="#34d399" font-size="16" font-weight="bold">Parallelized Execution</text>
+  <g font-size="14">
+    <rect x="120" y="300" width="760" height="30" rx="6" fill="#064e3b"/>
+    <text x="140" y="320" fill="#bbf7d0">Core 1: Step 1 ───────────────►</text>
+    <rect x="120" y="335" width="760" height="30" rx="6" fill="#064e3b"/>
+    <text x="140" y="355" fill="#bbf7d0">Core 2: Step 2 ───────────────►</text>
+    <rect x="120" y="370" width="760" height="30" rx="6" fill="#064e3b"/>
+    <text x="140" y="390" fill="#bbf7d0">Core 3: Step 3 ───────────────►</text>
+    <rect x="120" y="405" width="760" height="30" rx="6" fill="#064e3b"/>
+    <text x="140" y="425" fill="#bbf7d0">Core 4: Step 4 ───────────────►</text>
+  </g>
+  <text x="500" y="460" text-anchor="middle" fill="#fcd34d" font-size="15" font-weight="bold">Time = max(T1,T2,T3,T4)   |   Amdahl's Law: Speedup = 1 / [(1-P) + P/N]</text>
+
+  <!-- Q2 -->
+  <text x="40" y="540" fill="#34d399" font-size="22" font-weight="bold">Q2 — Multicore Processor Die (Core 0 &amp; Core 1)</text>
+
+  <rect x="100" y="560" width="800" height="240" rx="12" fill="#16213e" stroke="#475569"/>
+  <text x="500" y="588" text-anchor="middle" fill="#e2e8f0" font-size="16" font-weight="bold">Multicore Processor Die</text>
+
+  <g font-size="13" text-anchor="middle">
+    <rect x="160" y="605" width="280" height="160" rx="8" fill="#0d1b2a" stroke="#60a5fa"/>
+    <text x="300" y="630" fill="#60a5fa" font-weight="bold" font-size="15">CORE 0</text>
+    <rect x="200" y="645" width="200" height="28" rx="5" fill="#1e3a5f"/>
+    <text x="300" y="664" fill="#dbeafe">ALU</text>
+    <rect x="200" y="680" width="200" height="28" rx="5" fill="#1e3a5f"/>
+    <text x="300" y="699" fill="#dbeafe">FPU</text>
+    <rect x="200" y="715" width="200" height="28" rx="5" fill="#1e3a5f"/>
+    <text x="300" y="734" fill="#dbeafe">L1 Cache</text>
+    <text x="300" y="755" fill="#94a3b8" font-size="12">L2 Cache (private)</text>
+
+    <rect x="560" y="605" width="280" height="160" rx="8" fill="#0d1b2a" stroke="#60a5fa"/>
+    <text x="700" y="630" fill="#60a5fa" font-weight="bold" font-size="15">CORE 1</text>
+    <rect x="600" y="645" width="200" height="28" rx="5" fill="#1e3a5f"/>
+    <text x="700" y="664" fill="#dbeafe">ALU</text>
+    <rect x="600" y="680" width="200" height="28" rx="5" fill="#1e3a5f"/>
+    <text x="700" y="699" fill="#dbeafe">FPU</text>
+    <rect x="600" y="715" width="200" height="28" rx="5" fill="#1e3a5f"/>
+    <text x="700" y="734" fill="#dbeafe">L1 Cache</text>
+    <text x="700" y="755" fill="#94a3b8" font-size="12">L2 Cache (private)</text>
+  </g>
+
+  <line x1="300" y1="765" x2="500" y2="790" stroke="#94a3b8" stroke-width="2"/>
+  <line x1="700" y1="765" x2="500" y2="790" stroke="#94a3b8" stroke-width="2"/>
+  <text x="500" y="785" text-anchor="middle" fill="#94a3b8" font-size="12">shared</text>
+
+  <text x="500" y="850" text-anchor="middle" fill="#fcd34d" font-size="16" font-weight="bold">
+    Independent cores → simultaneous task execution → reduced total processing time
+  </text>
+
+  <!-- Q5 -->
+  <text x="40" y="930" fill="#34d399" font-size="22" font-weight="bold">Q5 — ISA defines, Microarchitecture implements</text>
+
+  <rect x="250" y="960" width="500" height="60" rx="8" fill="#16213e" stroke="#475569"/>
+  <text x="500" y="985" text-anchor="middle" fill="#e2e8f0" font-size="15" font-weight="bold">ISA (Specification)</text>
+  <text x="500" y="1008" text-anchor="middle" fill="#cbd5e1" font-size="12">"ADD: sum two registers, store result, update flags"</text>
+
+  <line x1="400" y1="1020" x2="280" y2="1070" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrow2)"/>
+  <line x1="500" y1="1020" x2="500" y2="1070" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrow2)"/>
+  <line x1="600" y1="1020" x2="720" y2="1070" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrow2)"/>
+
+  <g font-size="12" text-anchor="middle">
+    <rect x="100" y="1070" width="260" height="90" rx="8" fill="#0d1b2a" stroke="#f59e0b"/>
+    <text x="230" y="1095" fill="#f59e0b" font-weight="bold" font-size="14">Intel μArch</text>
+    <text x="230" y="1118" fill="#cbd5e1">2-operand adder,</text>
+    <text x="230" y="1136" fill="#cbd5e1">14-stage pipeline</text>
+
+    <rect x="370" y="1070" width="260" height="90" rx="8" fill="#0d1b2a" stroke="#f59e0b"/>
+    <text x="500" y="1095" fill="#f59e0b" font-weight="bold" font-size="14">AMD μArch</text>
+    <text x="500" y="1118" fill="#cbd5e1">different adder,</text>
+    <text x="500" y="1136" fill="#cbd5e1">6-wide superscalar</text>
+
+    <rect x="640" y="1070" width="260" height="90" rx="8" fill="#0d1b2a" stroke="#f59e0b"/>
+    <text x="770" y="1095" fill="#f59e0b" font-weight="bold" font-size="14">ARM μArch</text>
+    <text x="770" y="1118" fill="#cbd5e1">in-order adder,</text>
+    <text x="770" y="1136" fill="#cbd5e1">8-stage pipeline</text>
+  </g>
+
+  <text x="500" y="1200" text-anchor="middle" fill="#fcd34d" font-size="16" font-weight="bold">
+    All correctly perform ADD per ISA spec → Same binary runs on all
+  </text>
+
+  <text x="500" y="1240" text-anchor="middle" fill="#94a3b8" font-size="13">
+    30 years of x86 binary compatibility: 1995 software still runs on 2023 Intel/AMD CPUs
+  </text>
+
+  <defs>
+    <marker id="arrow2" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#94a3b8"/>
+    </marker>
+  </defs>
+
+  <text x="500" y="1660" text-anchor="middle" fill="#64748b" font-size="13">Assignment 2 — Advanced Computer Architecture | Solution Set B</text>
+</svg>
