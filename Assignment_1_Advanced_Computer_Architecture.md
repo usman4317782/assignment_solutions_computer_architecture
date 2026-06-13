@@ -1,4 +1,4 @@
-# 📘 ASSIGNMENT 1 — ADVANCED COMPUTER ARCHITECTURE
+# Allah Yaar 📘 ASSIGNMENT 1 — ADVANCED COMPUTER ARCHITECTURE
 ### Student Copy A | Subject: Advanced Computer Architecture
 
 ---

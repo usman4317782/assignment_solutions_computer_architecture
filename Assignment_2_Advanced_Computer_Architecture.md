@@ -1,4 +1,4 @@
-# 🖥️ ASSIGNMENT 2 — ADVANCED COMPUTER ARCHITECTURE
+# Hafiz Usman 🖥️ ASSIGNMENT 2 — ADVANCED COMPUTER ARCHITECTURE
 ### Student Copy B | Subject: Advanced Computer Architecture
 
 ---
